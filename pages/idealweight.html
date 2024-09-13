@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fit&Bit is a health and fitness website where you can calculate BMI, BMR, and track fitness goals. Stay fit and informed!">
+    <title>Ideal Weight Calculator - Fit&Bit</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="brand" href="../index.html">Fit&Bit</a>
+            <span class="navbar-toggler">☰</span>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="bmi.html">BMI</a></li>
+                <li><a href="bmr.html">BMR</a></li>
+                <li><a href="calorie.html">Calorie</a></li>
+                <li><a href="bodyfat.html">Body Fat</a></li>
+                <li><a href="leanbodymass.html">Body Mass</a></li>
+                <li><a href="idealweight.html" class="active">Ideal Weight</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="text-center mt-4">Ideal Weight Calculator</h2>
+        <p class="text-center">Enter your details to calculate your ideal weight range.</p>
+
+        <div class="form-container">
+            <form id="idealWeightForm">
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" class="form-control" placeholder="Enter age" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <div class="input-group">
+                        <select id="gender" class="form-control" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="height">Height:</label>
+                    <div class="input-group">
+                        <input type="text" id="height" class="form-control" placeholder="Enter height" required>
+                        <select id="heightUnit" class="form-control">
+                            <option value="cm">cm</option>
+                            <option value="feet_inch">Feet.Inch</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Calculate Ideal Weight</button>
+            </form>
+            <div class="result mt-4" id="idealWeightResult"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Fit&Bit. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../assets/js/idealweight.js"></script>
+    <script src="../assets/js/nav.js"></script>
+</body>
+</html>

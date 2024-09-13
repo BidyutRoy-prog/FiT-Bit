@@ -1,0 +1,401 @@
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #2c3e50;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.wrapper {
+    flex: 1;
+    width: 100%;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #34495e;
+    padding: 1rem;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px; /*maintain page width*/
+    margin: 0 auto;
+}
+
+.brand {
+    color: #ecf0f1;
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: #1abc9c;
+    font-weight: bold;
+}
+
+/* Navbar Toggler for Mobile */
+.navbar-toggler {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+        cursor: pointer;
+        color: #ecf0f1;
+        font-size: 1.75rem;
+        transition: transform 1s ease;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        background-color: #34495e;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        display: none;
+    }
+
+    .navbar .container {
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(52, 73, 94, 0.8), rgba(52, 73, 94, 0.8)), url('../images/fitness-banner.jpg') no-repeat center center/cover;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ecf0f1;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+.btn-large {
+    background-color: #1abc9c;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-large:hover {
+    background-color: #16a085;
+}
+
+/* Grid Layout for Sections */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 40px 0 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 2fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.grid-item {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.grid-item a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.grid-item a:hover {
+    background-color: #16a085;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr; /* Single column for small screens */
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+/* Main Content Styling */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+    color: #34495e;
+    margin-top: 30px;
+}
+
+.mt-4 {
+    margin-top: 20px;
+}
+
+/* Form Container Styling */
+.form-container {
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 40px auto;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+/* Input and Select Styling */
+.input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-control,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    box-sizing: border-box;
+}
+
+/* Button Styling */
+.btn {
+    background-color: #1abc9c;
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #16a085;
+}
+
+/* BMI Result Styling */
+.result {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #34495e;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 10px 0;
+    }
+}
+
+/* About Section Styling */
+.about-section {
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.about-section h1, .about-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    color: #34495e;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.about-section ul {
+    margin-left: 20px;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.features-list li {
+    list-style: none;
+}
+
+/* Contact Page Styling */
+.contact-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+}
+
+.contact-item h3 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+.contact-item a {
+    color: #1abc9c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #16a085;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.4rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust grid for smaller screens */
+        gap: 15px;
+    }
+
+    .grid-item {
+        padding: 15px;
+    }
+
+    .form-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+}
