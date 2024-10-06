@@ -37,3 +37,5 @@ Contributions are welcome! If you'd like to improve the project, feel free to fo
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Auther: Bidyut Roy
